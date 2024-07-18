@@ -1,0 +1,24 @@
+package com.example.ecommercebackend.service;
+
+import com.example.ecommercebackend.model.CartItem;
+import com.example.ecommercebackend.repository.CartItemRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CartItemService {
+    @Autowired
+    private CartItemRepository cartItemRepository;
+
+    public CartItem createCartItem(CartItem cartItem) {
+        return cartItemRepository.save(cartItem);
+    }
+
+    public CartItem updateCartItem(CartItem cartItem) {
+        return cartItemRepository.save(cartItem);
+    }
+
+    public void deleteCartItem(Long id) {
+        cartItemRepository.deleteById(id);
+    }
+}

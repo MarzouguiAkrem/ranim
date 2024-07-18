@@ -1,0 +1,10 @@
+<div>
+    <h2>Categories</h2>
+    <ul>
+      <li *ngFor="let category of categories">
+        {{ category.name }}
+        <button (click)="deleteCategory(category.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

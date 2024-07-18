@@ -1,0 +1,28 @@
+package com.example.ecommercebackend.service;
+
+import com.example.ecommercebackend.model.Cart;
+import com.example.ecommercebackend.repository.CartRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CartService {
+    @Autowired
+    private CartRepository cartRepository;
+
+    public Cart createCart() {
+        return cartRepository.save(new Cart());
+    }
+
+    public Cart getCart(Long id) {
+        return cartRepository.findById(id).orElse(null);
+    }
+
+    public Cart updateCart(Cart cart) {
+        return cartRepository.save(cart);
+    }
+
+    public void deleteCart(Long id) {
+        cartRepository.deleteById(id);
+    }
+}

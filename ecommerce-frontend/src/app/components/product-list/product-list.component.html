@@ -1,0 +1,13 @@
+<div>
+    <h2>Products</h2>
+    <select (change)="onCategoryChange($event.target.value)">
+      <option value="">All Categories</option>
+      <!-- Add categories dynamically here -->
+    </select>
+    <ul>
+      <li *ngFor="let product of products">
+        {{ product.name }} - {{ product.price | currency }}
+      </li>
+    </ul>
+  </div>
+  
